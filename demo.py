@@ -48,6 +48,12 @@ if __name__ == '__main__':
         help = 'A boolean option.',
     )
 
+    # Add custom boolean keyword argument
+    parser.add_argument(
+        '-q', '--quiet',
+        action = 'store_true',    
+    )
+
     # Parse the command-line arguments into a 'dict'-like container
     args = parser.parse_args()
 
@@ -71,3 +77,4 @@ if __name__ == '__main__':
     print("Number:", args.number)
     print("Threshold:", args.threshold)
     print("I am cool?", args.i_am_cool)
+    print("Shhh. Be vewy, vewy quiet, I'm hunting wabbits...", args.quiet)
