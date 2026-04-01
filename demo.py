@@ -51,18 +51,23 @@ if __name__ == '__main__':
     # Add custom boolean keyword argument
     parser.add_argument(
         '-q', '--quiet',
-    defult = False,    
-    action = 'store_true',
-    help = 'Another boolean option'    
+        default = False,
+        action = 'store_true',
+        help = 'Another boolean option.'
     )
 
     # Parse the command-line arguments into a 'dict'-like container
     args = parser.parse_args()
 
-    # What does `args` object "look" like?
-    print(
-        "The args after being processed by the argparse parser object:\n",
-        args)
+    if args.quiet:
+        print("Be vewy vewy quiet, I'm hunting wabbits.")
+
+    else:
+
+# What does `args` object "look" like?
+        print(
+            "The args after being processed by the argparse parser object:\n",
+            args)
 
     # We access the arguments specified on the command line (or the default
     # values if they were not used) by using `args.` syntax.
@@ -70,13 +75,12 @@ if __name__ == '__main__':
     # For positional arguments (like the first `add_argument` above), we access
     # the value of the arugment using the name we provided as the first
     # argument ("paths")
-    print("Paths:", args.file_path)
+        print("Paths:", args.file_path)
 
     # For keyword arguments (like all the rest of the `add_argument` calls
     # above), we access the value of the argument using the the long form of
     # the keyword flag (removing the first two dashes and replacing any other
     # dashes with underscores)
-    print("Number:", args.number)
-    print("Threshold:", args.threshold)
-    print("I am cool?", args.i_am_cool)
-    print("Shhh. Be vewy, vewy quiet, I'm hunting wabbits...", args.quiet)
+        print("Number:", args.number)
+        print("Threshold:", args.threshold)
+        print("I am cool?", args.i_am_cool)
