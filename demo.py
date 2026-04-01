@@ -51,7 +51,9 @@ if __name__ == '__main__':
     # Add custom boolean keyword argument
     parser.add_argument(
         '-q', '--quiet',
-        action = 'store_true',    
+    defult = False,    
+    action = 'store_true',
+    help = 'Another boolean option'    
     )
 
     # Parse the command-line arguments into a 'dict'-like container
